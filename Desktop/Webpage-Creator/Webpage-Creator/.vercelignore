@@ -1,0 +1,46 @@
+# Dependencies (reinstalled during Vercel build)
+node_modules
+**/node_modules
+
+# Git metadata
+.git
+**/.git
+
+# Local tooling and caches
+.local
+.agents
+.cache
+.cursor
+.replit
+.vercel
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# Build artifacts (rebuilt on deploy)
+dist
+**/dist
+out-tsc
+*.tsbuildinfo
+.expo
+.expo-shared
+
+# Non-workspace assets not required for portfolio build
+attached_assets
+
+# IDE / OS
+.idea
+.vscode
+.DS_Store
+Thumbs.db
+
+# Docs (not needed for build)
+replit.md
