@@ -2,6 +2,8 @@
 
 # compiled output
 dist
+.next
+out
 tmp
 out-tsc
 *.tsbuildinfo

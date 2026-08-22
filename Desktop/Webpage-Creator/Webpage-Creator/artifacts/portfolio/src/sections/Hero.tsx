@@ -21,7 +21,7 @@ const statsData = [
 ];
 
 export function Hero() {
-  const [imgSrc, setImgSrc] = useState<string>("/varat.jpg");
+  const [imgSrc, setImgSrc] = useState<string>("/images/varat.jpg");
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -273,7 +273,7 @@ export function Hero() {
                 <div>
                   <div className="text-xs font-medium">React · Next.js</div>
                   <div className="text-[10px] text-muted-foreground">
-                    5+ yrs combined
+                    1.5+ yrs combined
                   </div>
                 </div>
               </div>

@@ -28,6 +28,8 @@ yarn-error.log*
 # Build artifacts (rebuilt on deploy)
 dist
 **/dist
+.next
+**/.next
 out-tsc
 *.tsbuildinfo
 .expo
