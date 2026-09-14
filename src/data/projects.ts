@@ -1,4 +1,10 @@
-export type ProjectCategory = "Frontend" | "Web Apps" | "UI/UX";
+export type ProjectCategory =
+  | "Frontend"
+  | "Web Apps"
+  | "UI/UX"
+  | "Full-Stack"
+  | "Real Estate"
+  | "Web Application";
 
 export interface Project {
   id: string;
@@ -101,4 +107,7 @@ export const projectFilters: ("All" | ProjectCategory)[] = [
   "Frontend",
   "Web Apps",
   "UI/UX",
+  "Full-Stack",
+  "Real Estate",
+  "Web Application",
 ];
