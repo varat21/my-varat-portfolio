@@ -63,28 +63,37 @@ export const projects: Project[] = [
     liveUrl: "#",
     githubUrl: "#",
   },
-  {
-    id: "personal-portfolio",
-    index: "03",
-    title: "Personal Portfolio",
-    year: "2026",
-    role: "Designer & Developer",
-    description:
-      "A premium portfolio focused on frontend engineering, product design, and professional branding.",
-    overview:
-      "This site — built to present my own work with the same editorial care I bring to client projects, from typography through motion.",
-    challenge:
-      "Most developer portfolios default to the same template shapes. The goal was a site that reads as considered rather than assembled from a kit.",
-    solution:
-      "Built an editorial grid system in React and Framer Motion, with a single restrained motion language and a typographic system built around Fraunces and Inter.",
-    result:
-      "A fast, accessible, and distinct site that doubles as a working example of the craft it's advertising.",
-    categories: ["Frontend", "UI/UX"],
-    tech: ["React", "Vite", "Framer Motion", "Tailwind CSS"],
-    image: "/images/project-03.jpg",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
+{
+  id: "renteasy-real-estate",
+  index: "03",
+  title: "RentEasy — Real Estate Application",
+  year: "2023",
+  role: "Full-Stack Developer",
+  description:
+    "A full-stack real estate application designed to simplify property discovery, rental management, and communication between property owners and tenants.",
+  overview:
+    "RentEasy is a complete real estate platform where users can browse available properties, search and filter listings, view detailed property information, and manage rental-related activities through a responsive and intuitive interface.",
+  challenge:
+    "Traditional property searching can be time-consuming due to scattered listings, limited information, and inefficient communication between property owners and potential tenants. The goal was to build a centralized platform that makes property discovery and rental management faster and more convenient.",
+  solution:
+    "Developed a full-stack real estate platform with property listings, search and filtering, property details, image management, user authentication, and database integration. Built the frontend with a responsive and user-friendly interface while developing backend APIs and database functionality to securely manage users, properties, and rental data.",
+  result:
+    "Delivered a complete and responsive real estate application that provides a smooth property discovery experience while giving users and property owners an organized platform to manage listings and rental information.",
+  categories: ["Full-Stack", "Real Estate", "Web Application"],
+  tech: [
+    "React",
+    "Vite",
+    "Php",
+    "SQL",
+    "Tailwind CSS",
+    "email.js",
+    "e-sewa intergration"
+    
+  ],
+  image: "/images/project-03.jpg",
+  liveUrl: "#",
+  githubUrl: "#",
+},
 ];
 
 export const projectFilters: ("All" | ProjectCategory)[] = [

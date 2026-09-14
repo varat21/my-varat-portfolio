@@ -10,7 +10,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: "Backend",
-    items: ["Node.js", "REST APIs", "SQL", "Supabase"],
+    items: ["Node.js", "REST APIs", "SQL", "Supabase","Python"],
   },
   {
     label: "Tools",

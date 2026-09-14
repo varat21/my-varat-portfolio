@@ -9,7 +9,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Frontend Developer",
     org: "Everest Technology",
-    period: "2025 — Present",
+    period: "2023 — 2024",
     points: [
       "React and Next.js development",
       "Responsive interfaces",
@@ -22,7 +22,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Web Development & IT Consultant",
     org: "Nepal Health Economic Association",
-    period: "2024 — 2025",
+    period: "2025 — 2026",
     points: [
       "Website development",
       "Website maintenance",

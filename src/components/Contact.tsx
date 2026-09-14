@@ -60,7 +60,7 @@ export function Contact() {
                 className="mt-8 inline-flex items-center gap-2 font-display text-xl hover:text-clay transition-colors duration-300"
               >
                 <Mail className="h-5 w-5" strokeWidth={1.5} />
-                hello@varatthapa.dev
+                varat.thapa21@.gmail.com
               </a>
             </Reveal>
           </div>
