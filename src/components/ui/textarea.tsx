@@ -11,7 +11,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         className={cn(
           "w-full resize-none border-0 border-b border-border bg-transparent py-3 text-base",
           "placeholder:text-muted-foreground focus-visible:border-clay focus-visible:outline-none",
-          "transition-colors duration-300 ease-signature disabled:opacity-40",
+          "aria-invalid:border-clay transition-colors duration-300 ease-signature disabled:opacity-40",
           className
         )}
         {...props}

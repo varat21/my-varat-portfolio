@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { setLenis } from "@/lib/scrollTo";
 
 export function useLenis() {
   useEffect(() => {
@@ -11,6 +12,7 @@ export function useLenis() {
       easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
     });
+    setLenis(lenis);
 
     let frame: number;
     function raf(time: number) {
@@ -22,6 +24,7 @@ export function useLenis() {
     return () => {
       cancelAnimationFrame(frame);
       lenis.destroy();
+      setLenis(null);
     };
   }, []);
 }

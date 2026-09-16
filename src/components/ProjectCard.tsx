@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/data/projects";
 
 export function ProjectCard({
@@ -17,12 +17,27 @@ export function ProjectCard({
       data-cursor="project"
       data-cursor-label="View"
       layout
-      className="group relative block w-full overflow-hidden rounded-2xl border border-border bg-surface p-8 text-left transition-all duration-500 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 sm:p-12"
+      className="group relative block w-full overflow-hidden rounded-2xl border border-border bg-surface p-8 text-left transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/10 sm:p-12"
     >
+      {/* Watermark index */}
+      <span
+        aria-hidden
+        className="num pointer-events-none absolute -bottom-8 -right-4 select-none font-display text-[9rem] leading-none text-accent/5 transition-colors duration-500 group-hover:text-accent/10 sm:text-[13rem]"
+      >
+        {project.index}
+      </span>
+
       <div className="relative z-10 flex flex-col gap-6">
-        <div className="flex items-start justify-between">
-          <div className="flex flex-col gap-2">
-            <h3 className="font-display text-2xl font-medium tracking-tight sm:text-3xl lg:text-4xl">
+        <div className="flex items-start justify-between gap-6">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-2">
+              {project.categories.map((cat) => (
+                <Badge key={cat} variant="solid">
+                  {cat}
+                </Badge>
+              ))}
+            </div>
+            <h3 className="font-display text-2xl font-medium tracking-tight transition-transform duration-300 ease-signature group-hover:translate-x-1 sm:text-3xl lg:text-4xl">
               {project.title}
             </h3>
             <div className="flex flex-wrap gap-2 text-sm font-medium text-accent">
@@ -37,7 +52,7 @@ export function ProjectCard({
             </div>
           </div>
           <motion.span
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background text-foreground transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-foreground"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border bg-background text-foreground transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-foreground"
             whileHover={{ scale: 1.05 }}
           >
             <ArrowUpRight

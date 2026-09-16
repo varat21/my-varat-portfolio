@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Target, Lightbulb, Rocket, Calendar, User } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -9,6 +9,12 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import type { Project } from "@/data/projects";
+
+const highlights = [
+  { label: "Challenge", Icon: Target, text: "challenge" },
+  { label: "Solution", Icon: Lightbulb, text: "solution" },
+  { label: "Result", Icon: Rocket, text: "result" },
+] as const;
 
 export function ProjectDialog({
   project,
@@ -21,23 +27,39 @@ export function ProjectDialog({
     <Dialog open={!!project} onOpenChange={onOpenChange}>
       <DialogContent>
         {project && (
-          <>
+          <div key={project.id}>
             <DialogHeader>
-              <span className="num text-sm text-muted-foreground">
-                {project.index} — {project.year}
-              </span>
+              <div className="mb-3 flex flex-wrap items-center gap-2.5">
+                <span className="num text-sm text-muted-foreground">
+                  {project.index} — {project.year}
+                </span>
+                <span className="h-1 w-1 rounded-full bg-border" />
+                <div className="flex flex-wrap gap-2">
+                  {project.categories.map((cat) => (
+                    <Badge key={cat} variant="solid">
+                      {cat}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
               <DialogTitle>{project.title}</DialogTitle>
               <DialogDescription>{project.overview}</DialogDescription>
             </DialogHeader>
 
-            <div className="grid grid-cols-2 gap-6 border-y border-border py-6 sm:grid-cols-4">
+            <div className="mt-6 grid grid-cols-2 gap-6 border-y border-border py-6 sm:grid-cols-4">
               <div>
-                <p className="text-sm text-muted-foreground">Role</p>
-                <p className="mt-1 font-display text-lg">{project.role}</p>
+                <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                  <User className="h-3.5 w-3.5" strokeWidth={1.5} />
+                  Role
+                </p>
+                <p className="mt-1.5 font-display text-lg">{project.role}</p>
               </div>
               <div className="col-span-2 sm:col-span-3">
-                <p className="text-sm text-muted-foreground">Technologies</p>
-                <div className="mt-2 flex flex-wrap gap-2">
+                <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                  <Calendar className="h-3.5 w-3.5" strokeWidth={1.5} />
+                  Technologies
+                </p>
+                <div className="mt-2.5 flex flex-wrap gap-2">
                   {project.tech.map((t) => (
                     <Badge key={t}>{t}</Badge>
                   ))}
@@ -46,53 +68,50 @@ export function ProjectDialog({
             </div>
 
             <div className="mt-8 space-y-8">
-              <div>
-                <h4 className="font-display text-lg">Challenge</h4>
-                <p className="mt-2 leading-relaxed text-muted-foreground">
-                  {project.challenge}
-                </p>
-              </div>
-              <div>
-                <h4 className="font-display text-lg">Solution</h4>
-                <p className="mt-2 leading-relaxed text-muted-foreground">
-                  {project.solution}
-                </p>
-              </div>
-              <div>
-                <h4 className="font-display text-lg">Result</h4>
-                <p className="mt-2 leading-relaxed text-muted-foreground">
-                  {project.result}
-                </p>
-              </div>
+              {highlights.map(({ label, Icon, text }) => (
+                <div key={label}>
+                  <h4 className="flex items-center gap-2 font-display text-lg">
+                    <Icon className="h-4 w-4 text-accent" strokeWidth={1.5} />
+                    {label}
+                  </h4>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">
+                    {project[text]}
+                  </p>
+                </div>
+              ))}
             </div>
 
-            <Separator className="my-8" />
-
-            <div className="flex flex-wrap gap-6">
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm hover:text-clay transition-colors duration-300"
-                >
-                  Live demo
-                  <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
-                </a>
-              )}
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm hover:text-clay transition-colors duration-300"
-                >
-                  <Github className="h-4 w-4" strokeWidth={1.5} />
-                  Source
-                </a>
-              )}
-            </div>
-          </>
+            {(project.liveUrl && project.liveUrl !== "#") ||
+            (project.githubUrl && project.githubUrl !== "#") ? (
+              <>
+                <Separator className="my-8" />
+                <div className="flex flex-wrap gap-6">
+                  {project.liveUrl && project.liveUrl !== "#" && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm hover:text-clay transition-colors duration-300"
+                    >
+                      Live demo
+                      <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
+                    </a>
+                  )}
+                  {project.githubUrl && project.githubUrl !== "#" && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm hover:text-clay transition-colors duration-300"
+                    >
+                      <Github className="h-4 w-4" strokeWidth={1.5} />
+                      Source
+                    </a>
+                  )}
+                </div>
+              </>
+            ) : null}
+          </div>
         )}
       </DialogContent>
     </Dialog>
