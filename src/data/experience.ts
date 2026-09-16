@@ -47,7 +47,7 @@ export const education: EducationItem[] = [
   },
   {
     degree: "Bachelor in Information Technology",
-    school: "InfoTech College of Pokhara",
+    school: "Infomatic College of Pokhara",
     period: "Completed 2025",
   },
 ];
