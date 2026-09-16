@@ -45,8 +45,14 @@
     scroll-behavior: auto;
   }
 
+  /* Keep anchored sections clear of the fixed navbar. */
+  section[id],
+  [id="top"] {
+    scroll-margin-top: 6rem;
+  }
+
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased overflow-x-clip;
     font-feature-settings: "ss01" on, "cv01" on;
   }
 

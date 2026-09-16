@@ -5,6 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#141310" />
+    <meta name="color-scheme" content="light dark" />
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("vt-theme");
+          var dark =
+            stored === "dark" ||
+            (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (err) {}
+      })();
+    </script>
 
     <title>Varat Thapa — Frontend Developer & Product Engineer</title>
     <meta
