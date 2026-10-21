@@ -26,7 +26,6 @@ export const experience: ExperienceItem[] = [
     points: [
       "Website development",
       "Website maintenance",
-      "CMS and content management",
       "Technical support",
       "Digital workflow improvements",
     ],
@@ -47,7 +46,8 @@ export const education: EducationItem[] = [
   },
   {
     degree: "Bachelor in Information Technology",
-    school: "InfoTech College of Pokhara",
+    school: "Informatics college of pokhara",
     period: "Completed 2025",
   },
 ];
+

@@ -7,7 +7,7 @@ import {
   SiHtml5,
   SiCss,
   SiTailwindcss,
-  SiNodedotjs,
+  // SiNodedotjs,
   SiSupabase,
   SiPython,
   SiGit,
@@ -28,7 +28,7 @@ const brandIcons: Record<string, IconType> = {
   HTML: SiHtml5,
   CSS: SiCss,
   "Tailwind CSS": SiTailwindcss,
-  "Node.js": SiNodedotjs,
+  // "Node.js": SiNodedotjs,
   Supabase: SiSupabase,
   Python: SiPython,
   Git: SiGit,
@@ -54,7 +54,7 @@ function SkillIcon({ name }: { name: string }) {
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 sm:py-32">
+    <section id="skills" className="py-16 sm:py-24">
       <div className="container-edit">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4">

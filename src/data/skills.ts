@@ -8,10 +8,18 @@ export const skillGroups: SkillGroup[] = [
     label: "Frontend",
     items: ["React", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
   },
-  {
-    label: "Backend",
-    items: ["Node.js", "REST APIs", "SQL", "Supabase","Python"],
-  },
+ {
+  label: "Backend",
+  items: [
+    "Next.js API Routes",
+    "Next.js Server Actions",
+    "PHP",
+    "SQL",
+    "Supabase",
+    "Python",
+    "Email Authentication",
+  ],
+},
   {
     label: "Tools",
     items: ["Git", "GitHub", "VS Code", "Vercel", "Figma"],

@@ -7,36 +7,36 @@ import { scrollToId } from "@/lib/scrollTo";
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.09, delayChildren: 0.15 },
+    transition: { staggerChildren: 0.08, delayChildren: 0.12 },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
 const socials = [
-  { href: "https://github.com", label: "GitHub", Icon: Github },
-  { href: "https://linkedin.com", label: "LinkedIn", Icon: Linkedin },
+  { href: "https://github.com/varat21", label: "GitHub", Icon: Github },
+  { href: "https://linkedin.com/in/varatthapa", label: "LinkedIn", Icon: Linkedin },
   { href: "mailto:varat.thapa21@gmail.com", label: "Email", Icon: Mail },
 ];
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-40 pb-24 sm:pt-48 sm:pb-32">
+    <section id="top" className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-44 lg:pb-28">
       {/* Decorative background */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 right-[-8%] h-[420px] w-[420px] rounded-full bg-accent/10 blur-[120px]" />
+        <div className="absolute -top-32 right-[-8%] h-[420px] w-[420px] rounded-full bg-clay/10 blur-[120px]" />
         <div className="absolute bottom-0 left-[-10%] h-[320px] w-[320px] rounded-full bg-clay/5 blur-[100px]" />
       </div>
 
       <div className="container-edit">
-        <div className="flex flex-col gap-16 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -45,7 +45,7 @@ export function Hero() {
           >
             <motion.div
               variants={item}
-              className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground"
+              className="mb-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground"
             >
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3 py-1.5 backdrop-blur-sm">
                 <span className="relative flex h-2 w-2">
@@ -62,25 +62,25 @@ export function Hero() {
 
             <motion.h1
               variants={item}
-              className="text-balance font-display text-[clamp(2.75rem,6vw,6rem)] font-normal leading-[1.02] tracking-tight"
+              className="text-balance font-display text-[clamp(2.5rem,6vw,5.5rem)] font-normal leading-[1.04] tracking-tight"
             >
-              Building digital
+              Building thoughtful,
               <br />
-              experiences that
+              high-performance web
               <br />
-              feel effortless.
+              experiences.
             </motion.h1>
 
             <motion.p
               variants={item}
-              className="mt-8 max-w-md text-lg leading-relaxed text-muted-foreground"
+              className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground"
             >
-              I&rsquo;m Varat Thapa, a frontend developer and product engineer. I turn
-              considered design into interfaces that are fast, accessible, and built to
-              last — currently based in Kathmandu, working with teams anywhere.
+              I&rsquo;m Varat Thapa, a frontend developer and product engineer. I turn considered design
+              into interfaces that are fast, accessible, and built to last &mdash; currently based in
+              Kathmandu, working with teams anywhere.
             </motion.p>
 
-            <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-4">
+            <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
               <Button asChild>
                 <ScrollLink href="#projects">
                   View my work
@@ -96,37 +96,37 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-shrink-0 flex-col items-center gap-6"
+            transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-shrink-0 flex-col items-center gap-5"
           >
             <div className="group relative">
-              <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-br from-accent/20 via-transparent to-clay/10 blur-xl transition-opacity duration-700 group-hover:opacity-100" />
-              <div className="relative overflow-hidden rounded-3xl border border-border bg-accent/5 p-1.5 transition-all duration-500 group-hover:bg-accent/10">
-                <div className="relative h-[320px] w-[260px] overflow-hidden rounded-[20px] bg-muted sm:h-[360px] sm:w-[290px]">
+              <div className="absolute -inset-2 rounded-[28px] bg-gradient-to-br from-clay/15 via-transparent to-clay/5 blur-xl transition-opacity duration-700 group-hover:opacity-100" />
+              <div className="relative overflow-hidden rounded-3xl border border-border bg-background/60 p-1.5 transition-all duration-500">
+                <div className="relative h-[300px] w-[240px] overflow-hidden rounded-[20px] bg-muted sm:h-[340px] sm:w-[275px]">
                   <img
                     src="/images/varat.JPG"
-                    alt="Varat Thapa"
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    alt="Portrait of Varat Thapa, frontend developer and product engineer"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
                 </div>
 
                 {/* Floating availability chip */}
-                <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-border bg-background/85 px-3 py-1.5 text-xs font-medium backdrop-blur-md">
+                <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full border border-border bg-background/90 px-2.5 py-1 text-xs font-medium backdrop-blur-md">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                   Open to work
                 </div>
               </div>
             </div>
 
-            <div className="inline-flex items-center gap-1 rounded-full border border-border bg-background/60 p-1.5 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-1 rounded-full border border-border bg-background/60 p-1 backdrop-blur-sm">
               {socials.map(({ href, label, Icon }) => (
                 <a
                   key={label}
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={href.startsWith("http") ? "noreferrer" : undefined}
+                  rel={href.startsWith("http") ? "noreferrer noopener" : undefined}
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors duration-300 hover:bg-accent/10 hover:text-accent"
+                  className="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors duration-300 hover:bg-clay/10 hover:text-clay"
                 >
                   <Icon className="h-[18px] w-[18px]" strokeWidth={1.5} />
                 </a>

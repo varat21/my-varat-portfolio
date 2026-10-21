@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Alex Morgan — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Alex Morgan, a full-stack developer crafting fast, accessible, and beautiful web experiences with React, Node.js, and modern cloud platforms."
+    />
+    <meta name="author" content="Alex Morgan" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alexmorgan.dev/" />
+    <meta property="og:title" content="Alex Morgan — Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full-stack developer crafting fast, accessible, and beautiful web experiences with React, Node.js, and modern cloud platforms."
+    />
+    <meta property="og:image" content="https://alexmorgan.dev/og-image.png" />
+    <meta property="og:site_name" content="Alex Morgan Portfolio" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alex Morgan — Full-Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Full-stack developer crafting fast, accessible, and beautiful web experiences."
+    />
+    <meta name="twitter:image" content="https://alexmorgan.dev/og-image.png" />
+
+    <!-- Fonts: Inter (body) + Space Grotesk (headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apply saved theme before paint to avoid a flash of the wrong theme -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* localStorage unavailable — keep default dark theme */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

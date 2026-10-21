@@ -44,8 +44,8 @@ export const projects: Project[] = [
     categories: ["Frontend", "Web Apps"],
     tech: ["React", "Next.js", "Tailwind CSS", "Supabase"],
     image: "/images/project-01.jpg",
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://www.baburamtimsina.com.np/",
+    // githubUrl: "#",
   },
   {
     id: "nhea-website",
@@ -64,9 +64,9 @@ export const projects: Project[] = [
     result:
       "The association now manages its own content updates, and page load times improved significantly over the previous site.",
     categories: ["Frontend", "UI/UX"],
-    tech: ["React", "Next.js", "Tailwind CSS", "CMS"],
+    tech: ["React", "Next.js", "Tailwind CSS"],
     image: "/images/project-02.jpg",
-    liveUrl: "#",
+    liveUrl: "https://www.nheanepal.org/",
     githubUrl: "#",
   },
 {

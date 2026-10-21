@@ -20,8 +20,8 @@ const contactSchema = z.object({
 type ContactForm = z.infer<typeof contactSchema>;
 
 const socials = [
-  { href: "https://github.com", label: "GitHub", Icon: Github },
-  { href: "https://linkedin.com", label: "LinkedIn", Icon: Linkedin },
+  { href: "https://github.com/varat21", label: "GitHub", Icon: Github },
+  { href: "https://linkedin.com/in/varatthapa", label: "LinkedIn", Icon: Linkedin },
 ];
 
 export function Contact() {
@@ -48,7 +48,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="rule py-24 sm:py-32">
+    <section id="contact" className="rule py-16 sm:py-24">
       <div className="container-edit">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">

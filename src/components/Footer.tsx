@@ -10,15 +10,15 @@ const links = [
 ];
 
 const socials = [
-  { href: "https://github.com", label: "GitHub", Icon: Github },
-  { href: "https://linkedin.com", label: "LinkedIn", Icon: Linkedin },
+  { href: "https://github.com/varat21", label: "GitHub", Icon: Github },
+  { href: "https://linkedin.com/in/varatthapa", label: "LinkedIn", Icon: Linkedin },
   { href: "mailto:varat.thapa21@gmail.com", label: "Email", Icon: Mail },
 ];
 
 export function Footer() {
   return (
     <footer className="border-t border-border">
-      <div className="container-edit flex flex-col gap-12 py-14 sm:py-16 lg:flex-row lg:items-start lg:justify-between">
+      <div className="container-edit flex flex-col gap-10 py-10 sm:py-12 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-xs">
           <ScrollLink
             href="#top"
@@ -70,7 +70,7 @@ export function Footer() {
 
       <div className="border-t border-border">
         <div className="container-edit flex flex-col items-center justify-between gap-2 py-6 text-sm text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} Varat Thapa. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Hari Thapa. All rights reserved.</p>
           <p>Designed &amp; built in Kathmandu.</p>
         </div>
       </div>

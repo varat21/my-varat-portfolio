@@ -28,7 +28,7 @@ export function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-24 sm:py-32">
+    <section id="projects" className="py-16 sm:py-24">
       <div className="container-edit">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <SectionHeader
