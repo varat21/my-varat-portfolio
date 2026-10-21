@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens.
+  Light: warm paper + ink. Dark: graphite + soft ivory.
+  Accent: "clay" — a muted brick/terracotta drawn from Kathmandu's
+  brick architecture, used sparingly as a single signature color.
+*/
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 240 10% 3.9%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --border: 255 30% 92%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --accent: 18 58% 42%;
+    --accent-foreground: 0 0% 98%;
+    --clay: 18 58% 42%;
+    --surface: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --border: 240 3.7% 15.9%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --accent: 18 62% 66%;
+    --accent-foreground: 240 5.9% 10%;
+    --clay: 18 62% 66%;
+    --surface: 240 10% 3.9%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Keep anchored sections clear of the fixed navbar. */
+  section[id],
+  [id="top"] {
+    scroll-margin-top: 5.5rem;
+  }
+
+ body {
+  @apply bg-background text-foreground font-sans antialiased overflow-x-clip;
+  font-feature-settings: "ss01" on, "cv01" on;
+  text-rendering: optimizeLegibility;
+}
+
+  ::selection {
+    background: hsl(var(--clay) / 0.25);
+    color: hsl(var(--foreground));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--clay));
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .container-edit {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8 lg:px-12;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .rule {
+    @apply border-t border-border;
+  }
+
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" on;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom cursor is disabled by default; enabled via JS on fine-pointer devices only. */
+@media (pointer: fine) {
+  html.custom-cursor,
+  html.custom-cursor a,
+  html.custom-cursor button {
+    cursor: none;
+  }
+}
+
+
+/* Consistent section rhythm and readable measure. */
+@layer utilities {
+  .section-space {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .content-measure {
+    max-width: 68ch;
+  }
+}
+
+@media (max-width: 639px) {
+  section[id],
+  [id="top"] {
+    scroll-margin-top: 5rem;
+  }
+}
