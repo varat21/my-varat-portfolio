@@ -37,32 +37,55 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll-spy: track which section is currently in view
+  // Scroll-spy: track which section is currently in view. Lazy sections mount
+  // after the initial render, so re-observe whenever the rendered sections change.
   useEffect(() => {
-    const sections = links
-      .map((link) => document.querySelector(link.href))
-      .filter((el): el is Element => Boolean(el));
+    let observer: IntersectionObserver | null = null;
+    let observedKey = "";
 
-    if (sections.length === 0) return;
+    const observeSections = () => {
+      const sections = links
+        .map((link) => document.querySelector(link.href))
+        .filter((el): el is Element => Boolean(el));
+      const key = sections.map((section) => section.id).join(",");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (key === observedKey) return;
+      observedKey = key;
 
-        if (visible[0]) {
-          setActive(`#${visible[0].target.id}`);
+      observer?.disconnect();
+      if (sections.length === 0) return;
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+          if (visible[0]) {
+            setActive(`#${visible[0].target.id}`);
+          }
+        },
+        {
+          rootMargin: "-35% 0px -50% 0px",
+          threshold: [0, 0.25, 0.5, 0.75, 1],
         }
-      },
-      {
-        rootMargin: "-35% 0px -50% 0px",
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-      }
-    );
+      );
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+      sections.forEach((section) => observer?.observe(section));
+    };
+
+    observeSections();
+
+    const mutationObserver = new MutationObserver(observeSections);
+    mutationObserver.observe(document.getElementById("main") ?? document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      mutationObserver.disconnect();
+      observer?.disconnect();
+    };
   }, []);
 
   // Move the sliding pill indicator to sit under the active link
