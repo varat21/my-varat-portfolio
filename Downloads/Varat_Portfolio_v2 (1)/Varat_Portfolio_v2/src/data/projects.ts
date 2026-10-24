@@ -18,7 +18,7 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
 }
-
+//
 export const projects: Project[] = [
   {
     id: "professor-portfolio",
