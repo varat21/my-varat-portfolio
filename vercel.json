@@ -1,1 +1,1 @@
-﻿{"framework":"vite","installCommand":"npm install --include=dev","buildCommand":"npm run build","outputDirectory":"dist"}
+{"framework":"vite","buildCommand":"npm run build","outputDirectory":"dist"}
