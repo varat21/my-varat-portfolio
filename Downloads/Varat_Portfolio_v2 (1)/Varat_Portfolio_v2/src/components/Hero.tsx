@@ -2,7 +2,7 @@ import { m } from "framer-motion";
 import { ArrowRight, Check, Copy, Download, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollLink } from "@/components/ScrollLink";
-import { GlowCard } from "@/components/GlowCard";
+import { DeveloperProfileCard } from "@/components/developer-profile-card";
 import { RoleTicker } from "@/components/RoleTicker";
 import { useCopy } from "@/hooks/useCopy";
 import { site, socialLinks } from "@/data/site";
@@ -111,22 +111,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 24, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="justify-self-start lg:justify-self-end"
+            className="w-full max-w-[648px] justify-self-start lg:max-w-[480px] lg:justify-self-end xl:max-w-[520px]"
           >
-            <GlowCard tilt={5} className="rounded-2xl p-1.5" innerClassName="rounded-xl">
-              <picture>
-                <source srcSet="/images/varat.webp" type="image/webp" />
-                <img
-                  src="/images/varat-576.jpg"
-                  alt={`Portrait of ${site.name}`}
-                  width={576}
-                  height={764}
-                  fetchPriority="high"
-                  decoding="async"
-                  className="aspect-[576/764] w-56 rounded-md bg-muted object-cover sm:w-64 lg:w-72"
-                />
-              </picture>
-            </GlowCard>
+            <DeveloperProfileCard />
           </m.div>
         </div>
       </div>
