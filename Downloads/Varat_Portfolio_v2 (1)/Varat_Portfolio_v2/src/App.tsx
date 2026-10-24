@@ -1,4 +1,4 @@
-import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
+﻿import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/Navbar";
