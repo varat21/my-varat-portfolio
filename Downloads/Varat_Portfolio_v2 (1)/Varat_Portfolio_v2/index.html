@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Apply the saved theme (default: dark) before first paint to avoid a flash. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("vt-theme");
+          // Dark-first: only an explicit "light" choice overrides it.
+          var dark = stored !== "light";
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (err) {}
+      })();
+    </script>
+
+    <title>Hari Thapa — Frontend Developer &amp; Product Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Varat Thapa, a frontend developer and product engineer based in Kathmandu, Nepal."
+    />
+    <meta name="author" content="Varat Thapa" />
+    <link rel="canonical" href="https://varatthapa.dev/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Varat Thapa" />
+    <meta property="og:title" content="Varat Thapa — Frontend Developer &amp; Product Engineer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Varat Thapa, a frontend developer and product engineer based in Kathmandu, Nepal."
+    />
+    <meta property="og:url" content="https://varatthapa.dev/" />
+    <meta property="og:image" content="https://varatthapa.dev/images/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Varat Thapa — Frontend Developer and Product Engineer" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Varat Thapa — Frontend Developer &amp; Product Engineer" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Varat Thapa, a frontend developer and product engineer based in Kathmandu, Nepal."
+    />
+    <meta name="twitter:image" content="https://varatthapa.dev/images/og-cover.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hari Thapa",
+        "jobTitle": "Frontend Developer & Product Engineer",
+        "url": "https://varatthapa.dev",
+        "email": "mailto:varat.thapa21@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Kathmandu", "addressCountry": "NP" },
+        "sameAs": ["https://github.com/varat21"]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>This portfolio needs JavaScript to render. Contact: varat.thapa21@gmail.com</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
